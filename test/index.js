@@ -1,3 +1,5 @@
+'use strict';
+
 var should = require('chai').should();
 var Hexo = require('hexo');
 
@@ -6,6 +8,7 @@ describe('Archive generator', function(){
   var Post = hexo.model('Post');
   var generator = require('../lib/generator').bind(hexo);
   var posts;
+  var locals;
 
   before(function(){
     return Post.insert([
@@ -15,6 +18,7 @@ describe('Archive generator', function(){
       {source: 'boo', slug: 'boo', date: new Date(2013, 5, 8)}
     ]).then(function(data){
       posts = Post.sort('-date');
+      locals = hexo.locals.toObject();
     });
   });
 
@@ -25,7 +29,7 @@ describe('Archive generator', function(){
       monthly: true
     };
 
-    var result = generator(hexo.locals);
+    var result = generator(locals);
 
     result.length.should.eql(8);
 
@@ -139,7 +143,7 @@ describe('Archive generator', function(){
       monthly: true
     };
 
-    var result = generator(hexo.locals);
+    var result = generator(locals);
 
     result.length.should.eql(6);
 
@@ -230,7 +234,7 @@ describe('Archive generator', function(){
       monthly: true
     };
 
-    var result = generator(hexo.locals);
+    var result = generator(locals);
 
     result.map(function(item){
       return item.path;
@@ -244,7 +248,7 @@ describe('Archive generator', function(){
       monthly: false
     };
 
-    var result = generator(hexo.locals);
+    var result = generator(locals);
 
     result.map(function(item){
       return item.path;

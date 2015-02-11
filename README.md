@@ -13,14 +13,12 @@ $ npm install hexo-generator-archive --save
 ## Options
 
 ``` yaml
-archive_dir: archives
 archive_generator:
   per_page: 10
   yearly: true
   monthly: true
 ```
 
-- **archive_dir**: Archive directory
 - **per_page**: Posts displayed per page. (0 = disable pagination)
 - **yearly**: Generate yearly archive.
 - **monthly**: Generate monthly archive.
