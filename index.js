@@ -1,6 +1,8 @@
-var merge = require('utils-merge');
+'use strict';
 
-hexo.config.archive_generator = merge({
+var assign = require('object-assign');
+
+hexo.config.archive_generator = assign({
   per_page: hexo.config.per_page,
   yearly: true,
   monthly: true
