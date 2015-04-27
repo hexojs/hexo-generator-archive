@@ -254,4 +254,23 @@ describe('Archive generator', function(){
       return item.path;
     }).should.eql(['archives/', 'archives/2013/', 'archives/2014/']);
   });
+
+  it('custom pagination_dir', function(){
+    hexo.config.archive_generator = {
+      per_page: 1,
+      yearly: false,
+      monthly: false
+    };
+
+    hexo.config.pagination_dir = 'yo';
+
+    var result = generator(locals);
+
+    result.map(function(item){
+        return item.path;
+    }).should.eql(['archives/', 'archives/yo/2/', 'archives/yo/3/', 'archives/yo/4/']);
+
+    // Restore config
+    hexo.config.pagination_dir = 'page';
+  });
 });
