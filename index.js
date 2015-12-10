@@ -16,7 +16,8 @@ if (hexo.config.archive === 1) {
 hexo.config.archive_generator = assign({
   per_page: per_page,
   yearly: true,
-  monthly: true
+  monthly: true,
+  daily: false
 }, hexo.config.archive_generator);
 
 hexo.extend.generator.register('archive', require('./lib/generator'));

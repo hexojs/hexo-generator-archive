@@ -17,11 +17,13 @@ archive_generator:
   per_page: 10
   yearly: true
   monthly: true
+  daily: false
 ```
 
 - **per_page**: Posts displayed per page. (0 = disable pagination)
 - **yearly**: Generate yearly archive.
 - **monthly**: Generate monthly archive.
+- **daily**: Generate daily archive.
 
 ## License
 
