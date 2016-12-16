@@ -26,4 +26,4 @@ hexo.config.archive_generator = assign({
 
 hexo.extend.generator.register('archive', require('./lib/generator'));
 
-}
+//}
