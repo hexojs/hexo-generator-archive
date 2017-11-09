@@ -1,6 +1,6 @@
 {
   "name": "hexo-generator-archive",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Archive generator for Hexo.",
   "main": "index",
   "scripts": {
