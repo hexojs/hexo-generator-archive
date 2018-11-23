@@ -33,6 +33,6 @@
   },
   "dependencies": {
     "hexo-pagination": "0.1.0",
-    "object-assign": "^2.0.0"
+    "object-assign": "^4.1.1"
   }
 }
