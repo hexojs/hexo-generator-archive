@@ -7,20 +7,19 @@ describe('Archive generator', function() {
   var hexo = new Hexo(__dirname, {silent: true});
   var Post = hexo.model('Post');
   var generator = require('../lib/generator').bind(hexo);
-  var posts;
-  var locals;
+  var posts, locals;
 
   before(() => hexo.init().then(() => Post.insert([
-      {source: 'quux', slug: 'quux', date: new Date(2014, 1, 2)},
-      {source: 'qux', slug: 'qux', date: new Date(2014, 1, 2)},
-      {source: 'foo', slug: 'foo', date: new Date(2014, 1, 2)},
-      {source: 'bar', slug: 'bar', date: new Date(2013, 5, 6)},
-      {source: 'baz', slug: 'baz', date: new Date(2013, 9, 10)},
-      {source: 'boo', slug: 'boo', date: new Date(2013, 5, 8)}
-    ])).then(data => {
-      posts = Post.sort('-date');
-      locals = hexo.locals.toObject();
-    }));
+    {source: 'quux', slug: 'quux', date: new Date(2014, 1, 2)},
+    {source: 'qux', slug: 'qux', date: new Date(2014, 1, 2)},
+    {source: 'foo', slug: 'foo', date: new Date(2014, 1, 2)},
+    {source: 'bar', slug: 'bar', date: new Date(2013, 5, 6)},
+    {source: 'baz', slug: 'baz', date: new Date(2013, 9, 10)},
+    {source: 'boo', slug: 'boo', date: new Date(2013, 5, 8)}
+  ])).then(data => {
+    posts = Post.sort('-date');
+    locals = hexo.locals.toObject();
+  }));
 
   it('pagination enabled', function() {
     hexo.config.archive_generator = {
