@@ -5,7 +5,6 @@
   "main": "index",
   "scripts": {
     "eslint": "eslint .",
-    "jscs": "jscs .",
     "test": "mocha test/index.js",
     "test-cov": "istanbul cover --print both _mocha -- test/index.js"
   },
@@ -27,8 +26,6 @@
     "eslint-config-hexo": "^1.0.2",
     "hexo": "^3.1.1",
     "istanbul": "^0.4.1",
-    "jscs": "^3.0.7",
-    "jscs-preset-hexo": "^1.0.1",
     "mocha": "^5.2.0"
   },
   "dependencies": {
