@@ -31,5 +31,8 @@
   "dependencies": {
     "hexo-pagination": "0.1.0",
     "object-assign": "^2.0.0"
+  },
+  "engines": {
+    "node": "^6.9 || ^8.9 || ^10.13 || >=11"
   }
 }
