@@ -10,19 +10,17 @@ describe('Archive generator', function() {
   var posts;
   var locals;
 
-  before(function() {
-    return Post.insert([
+  before(() => hexo.init().then(() => Post.insert([
       {source: 'quux', slug: 'quux', date: new Date(2014, 1, 2)},
       {source: 'qux', slug: 'qux', date: new Date(2014, 1, 2)},
       {source: 'foo', slug: 'foo', date: new Date(2014, 1, 2)},
       {source: 'bar', slug: 'bar', date: new Date(2013, 5, 6)},
       {source: 'baz', slug: 'baz', date: new Date(2013, 9, 10)},
       {source: 'boo', slug: 'boo', date: new Date(2013, 5, 8)}
-    ]).then(function(data) {
+    ])).then(data => {
       posts = Post.sort('-date');
       locals = hexo.locals.toObject();
-    });
-  });
+    }));
 
   it('pagination enabled', function() {
     hexo.config.archive_generator = {
