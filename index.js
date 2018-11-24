@@ -4,7 +4,7 @@
 
 var assign = require('object-assign');
 
-if (!(hexo.config.archive && hexo.config.archive.enabled === false) {
+if (!(hexo.config.archive && hexo.config.archive.enabled === false)) {
   // when archive disabled pagination, per_page should be 0.
   var per_page;
 
