@@ -4,6 +4,10 @@
 
 var assign = require('object-assign');
 
+if (hexo.config.archive && hexo.config.archive.enabled === false) {
+  return;
+}
+
 // when archive disabled pagination, per_page should be 0.
 var per_page;
 
@@ -23,5 +27,3 @@ hexo.config.archive_generator = assign({
 }, hexo.config.archive_generator);
 
 hexo.extend.generator.register('archive', require('./lib/generator'));
-
-
