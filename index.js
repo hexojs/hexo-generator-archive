@@ -2,8 +2,6 @@
 
 'use strict';
 
-var assign = require('object-assign');
-
 // when archive disabled pagination, per_page should be 0.
 var per_page;
 
@@ -15,7 +13,7 @@ if (hexo.config.archive === 1) {
   per_page = hexo.config.per_page;
 }
 
-hexo.config.archive_generator = assign({
+hexo.config.archive_generator = Object.assign({
   per_page: per_page,
   yearly: true,
   monthly: true,
