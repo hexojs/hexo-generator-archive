@@ -22,8 +22,8 @@ archive_generator:
   order_by: -date
 ```
 
-- **enabled**: Is hexo-generator-archive enabled (empty/null = enabled)
-- **per_page**: Posts displayed per page. (0 = disable pagination)
+- **enabled**: The default value is **true**, set to **false** if you do not want to enable the plugin
+- **per_page**: Posts displayed per page. (**0** = disable pagination)
 - **yearly**: Generate yearly archive.
 - **monthly**: Generate monthly archive.
 - **daily**: Generate daily archive.
