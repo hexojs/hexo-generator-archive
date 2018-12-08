@@ -3,7 +3,7 @@
 const should = require('chai').should(); // eslint-disable-line
 const Hexo = require('hexo');
 
-describe('Archive generator', function() {
+describe('Archive generator', () => {
   const hexo = new Hexo(__dirname, {silent: true});
   const Post = hexo.model('Post');
   const generator = require('../lib/generator').bind(hexo);
@@ -21,7 +21,7 @@ describe('Archive generator', function() {
     locals = hexo.locals.toObject();
   }));
 
-  it('pagination enabled', function() {
+  it('pagination enabled', () => {
     hexo.config.archive_generator = {
       per_page: 2,
       yearly: true,
@@ -151,7 +151,7 @@ describe('Archive generator', function() {
     result[10].data.month.should.eql(2);
   });
 
-  it('pagination disabled', function() {
+  it('pagination disabled', () => {
     hexo.config.archive_generator = {
       per_page: 0,
       yearly: true,
@@ -242,7 +242,7 @@ describe('Archive generator', function() {
     result[5].data.month.should.eql(2);
   });
 
-  it('yearly disabled', function() {
+  it('yearly disabled', () => {
     hexo.config.archive_generator = {
       per_page: 0,
       yearly: false,
@@ -252,12 +252,12 @@ describe('Archive generator', function() {
 
     const result = generator(locals);
 
-    result.map(function(item) {
+    result.map(item => {
       return item.path;
     }).should.eql(['archives/']);
   });
 
-  it('monthly enabled and daily enabled', function() {
+  it('monthly enabled and daily enabled', () => {
     hexo.config.archive_generator = {
       per_page: 0,
       yearly: true,
@@ -267,13 +267,13 @@ describe('Archive generator', function() {
 
     const result = generator(locals);
 
-    result.map(function(item) {
+    result.map(item => {
       return item.path;
     }).should.include('archives/', 'archives/2013/', 'archives/2014/', 'archives/2013/06/', 'archives/2013/10/', 'archives/2014/02/', 'archives/2013/06/06/', 'archives/2013/10/10/', 'archives/2014/02/02');
   });
 
-  describe('monthly disabled', function() {
-    it('daily disabled', function() {
+  describe('monthly disabled', () => {
+    it('daily disabled', () => {
       hexo.config.archive_generator = {
         per_page: 0,
         yearly: true,
@@ -283,12 +283,12 @@ describe('Archive generator', function() {
 
       const result = generator(locals);
 
-      result.map(function(item) {
+      result.map(item => {
         return item.path;
       }).should.eql(['archives/', 'archives/2013/', 'archives/2014/']);
     });
 
-    it('daily enabled', function() {
+    it('daily enabled', () => {
       hexo.config.archive_generator = {
         per_page: 0,
         yearly: true,
@@ -298,13 +298,13 @@ describe('Archive generator', function() {
 
       const result = generator(locals);
 
-      result.map(function(item) {
+      result.map(item => {
         return item.path;
       }).should.include('archives/', 'archives/2013/', 'archives/2014/', 'archives/2013/06/06/', 'archives/2013/10/10/', 'archives/2014/02/02');
     });
   });
 
-  it('custom pagination_dir', function() {
+  it('custom pagination_dir', () => {
     hexo.config.archive_generator = {
       per_page: 1,
       yearly: false,
@@ -316,7 +316,7 @@ describe('Archive generator', function() {
 
     const result = generator(locals);
 
-    result.map(function(item) {
+    result.map(item => {
       return item.path;
     }).should.eql(['archives/', 'archives/yo/2/', 'archives/yo/3/', 'archives/yo/4/', 'archives/yo/5/', 'archives/yo/6/']);
 
