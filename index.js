@@ -4,7 +4,7 @@
 
 if (!(hexo.config.archive && hexo.config.archive.enabled === false)) {
   // when archive disabled pagination, per_page should be 0.
-  var per_page;
+  let per_page;
 
   if (hexo.config.archive === 1) {
     per_page = 0;
