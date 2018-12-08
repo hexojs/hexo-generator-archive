@@ -1,13 +1,13 @@
 'use strict';
 
-var should = require('chai').should(); // eslint-disable-line
-var Hexo = require('hexo');
+const should = require('chai').should(); // eslint-disable-line
+const Hexo = require('hexo');
 
 describe('Archive generator', function() {
-  var hexo = new Hexo(__dirname, {silent: true});
-  var Post = hexo.model('Post');
-  var generator = require('../lib/generator').bind(hexo);
-  var posts, locals;
+  const hexo = new Hexo(__dirname, {silent: true});
+  const Post = hexo.model('Post');
+  const generator = require('../lib/generator').bind(hexo);
+  let posts, locals;
 
   before(() => hexo.init().then(() => Post.insert([
     {source: 'quux', slug: 'quux', date: new Date(2014, 1, 2)},
@@ -29,11 +29,11 @@ describe('Archive generator', function() {
       daily: false
     };
 
-    var result = generator(locals);
+    const result = generator(locals);
 
     result.length.should.eql(11);
 
-    for (var i = 0, len = result.length; i < len; i++) {
+    for (let i = 0, len = result.length; i < len; i++) {
       result[i].layout.should.eql(['archive', 'index']);
       result[i].data.archive.should.be.true;
     }
@@ -159,10 +159,10 @@ describe('Archive generator', function() {
       daily: false
     };
 
-    var result = generator(locals);
+    const result = generator(locals);
     result.length.should.eql(6);
 
-    for (var i = 0, len = result.length; i < len; i++) {
+    for (let i = 0, len = result.length; i < len; i++) {
       result[i].layout.should.eql(['archive', 'index']);
       result[i].data.archive.should.be.true;
     }
@@ -250,7 +250,7 @@ describe('Archive generator', function() {
       daily: false
     };
 
-    var result = generator(locals);
+    const result = generator(locals);
 
     result.map(function(item) {
       return item.path;
@@ -265,7 +265,7 @@ describe('Archive generator', function() {
       daily: true
     };
 
-    var result = generator(locals);
+    const result = generator(locals);
 
     result.map(function(item) {
       return item.path;
@@ -281,7 +281,7 @@ describe('Archive generator', function() {
         daily: false
       };
 
-      var result = generator(locals);
+      const result = generator(locals);
 
       result.map(function(item) {
         return item.path;
@@ -296,7 +296,7 @@ describe('Archive generator', function() {
         daily: true
       };
 
-      var result = generator(locals);
+      const result = generator(locals);
 
       result.map(function(item) {
         return item.path;
@@ -314,7 +314,7 @@ describe('Archive generator', function() {
 
     hexo.config.pagination_dir = 'yo';
 
-    var result = generator(locals);
+    const result = generator(locals);
 
     result.map(function(item) {
       return item.path;
