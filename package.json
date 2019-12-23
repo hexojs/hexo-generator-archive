@@ -30,7 +30,7 @@
     "eslint-config-hexo": "^4.0.0",
     "hexo": "^3.9.0",
     "mocha": "^6.1.4",
-    "nyc": "^14.1.1"
+    "nyc": "^15.0.0"
   },
   "dependencies": {
     "hexo-pagination": "1.0.0"
