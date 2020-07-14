@@ -15,7 +15,7 @@ if (!(hexo.config.archive && hexo.config.archive.enabled === false)) {
   }
 
   hexo.config.archive_generator = Object.assign({
-    per_page: per_page,
+    per_page,
     yearly: true,
     monthly: true,
     daily: false
