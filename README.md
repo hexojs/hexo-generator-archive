@@ -1,6 +1,6 @@
 # hexo-generator-archive
 
-[![Build Status](https://travis-ci.org/hexojs/hexo-generator-archive.svg?branch=master)](https://travis-ci.org/hexojs/hexo-generator-archive)
+[![Build Status](https://github.com/hexojs/hexo-generator-archive/workflows/Tester/badge.svg)](https://github.com/hexojs/hexo-generator-archive/actions?query=workflow%3ATester)
 [![NPM version](https://badge.fury.io/js/hexo-generator-archive.svg)](https://www.npmjs.com/package/hexo-generator-archive)
 [![Coverage Status](https://img.shields.io/coveralls/hexojs/hexo-generator-archive.svg)](https://coveralls.io/r/hexojs/hexo-generator-archive?branch=master)
 
