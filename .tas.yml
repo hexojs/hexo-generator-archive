@@ -1,0 +1,15 @@
+---
+framework: mocha
+preRun:
+  command:
+    - npm ci
+preMerge:
+  pattern:
+    - "./test/index.js"
+postMerge:
+  pattern:
+    - "./test/index.js"
+postRun:
+  command:
+    - node --version
+version: 1.0
