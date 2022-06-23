@@ -2,7 +2,7 @@
 
 'use strict';
 
-if (!(hexo.config.archive && hexo.config.archive.enabled === false)) {
+if (!(hexo.config.archive_generator && hexo.config.archive_generator.enabled === false)) {
   // when archive disabled pagination, per_page should be 0.
   let per_page;
 
