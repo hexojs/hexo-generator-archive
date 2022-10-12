@@ -16,13 +16,13 @@
     "lib/"
   ],
   "repository": "hexojs/hexo-generator-archive",
-  "homepage": "http://hexo.io/",
+  "homepage": "https://hexo.io/",
   "keywords": [
     "hexo",
     "generator",
     "archive"
   ],
-  "author": "Tommy Chen <tommy351@gmail.com> (http://zespia.tw)",
+  "author": "Tommy Chen <tommy351@gmail.com> (https://zespia.tw)",
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.2.0",
