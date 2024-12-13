@@ -22,6 +22,9 @@ archive_generator:
   monthly: true
   daily: false
   order_by: -date
+  explicit_paging: false
+  overwrite_latest: false
+  verbose: false
 ```
 
 - **enabled**: The default value is **true**, set to **false** if you do not want to enable the plugin
@@ -30,6 +33,9 @@ archive_generator:
 - **monthly**: Generate monthly archive.
 - **daily**: Generate daily archive.
 - **order_by**: Posts order. (Order by date descending by default)
+- **explicit_paging**: Explicit paging. (Number the first page. e.g. `page/1/index.html`)
+- **overwrite_latest**: Set the latest page. (`latest/index.html` in place of `page/N/index.html`)
+- **verbose**: verbose output. (Output all generated routes)
 
 ## License
 
