@@ -23,7 +23,8 @@ archive_generator:
   daily: false
   order_by: -date
   explicit_paging: false
-  overwrite_latest: false
+  rename_last: false
+  localized_last: 'last'
   verbose: false
 ```
 
@@ -34,7 +35,8 @@ archive_generator:
 - **daily**: Generate daily archive.
 - **order_by**: Posts order. (Order by date descending by default)
 - **explicit_paging**: Explicit paging. (Number the first page. e.g. `page/1/index.html`)
-- **overwrite_latest**: Set the latest page. (`latest/index.html` in place of `page/N/index.html`). If there is a single page it requires explicitPaging=true`.
+- **rename_last**: Set the latest page. (`page/last/index.html` in place of `page/N/index.html`). If there is a single page it requires explicitPaging=true`.
+- **localized_last**: Localize the last page name. (`page/最後/index.html` in place of `page/last/index.html`).
 - **verbose**: verbose output. (Output all generated routes)
 
 ## License
